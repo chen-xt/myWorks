@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>风车</title>
+    <style>
+
+        div{
+            position: relative;
+            margin: 0 auto;
+        }
+        img:nth-child(1){
+            height: 800px;
+            width: 1600px;
+            position: absolute;
+            background-color: blue;
+
+        }
+        /*中等风车*/
+        img:nth-child(2){
+            height: 400px;
+            width: 400px;
+            position: absolute;
+            top: 277px;
+            left: 925px;
+            animation-name: myTranslate;
+            animation-duration: 1.5s ;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+        }
+        /*最小风车*/
+        img:nth-child(3){
+            height: 200px;
+            width: 200px;
+            position: absolute;
+            top: 480px;
+            left: 725px;
+            animation-name: myTranslate;
+            animation-duration: 1.5s ;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+        }
+        /*最大风车*/
+        img:nth-child(4){
+            height: 600px;
+            width: 600px;
+            position: absolute;
+            top: 40px;
+            left: 165px;
+            animation-name: myTranslate;
+            animation-duration: 1.5s ;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+        }
+        /*飞机：飞进去消失*/
+        img:nth-child(5){
+            position: absolute;
+            animation-name: myFly1;
+            animation-duration: 4s ;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+        }
+        /*飞机：飞出来*/
+        img:nth-child(6){
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            animation-name: myFly2;
+            animation-duration: 4s ;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+        }
+        /*白云*/
+        img:nth-child(7){
+            height: 100px;
+            width: 100px;
+            position: absolute;
+            top:30px;
+            left:100px;
+        }
+        img:nth-child(8){
+            height: 100px;
+            width: 100px;
+            position: absolute;
+            top:30px;
+            left:100px;
+        }
+        @keyframes myTranslate {
+            from{
+                transform: rotate(0deg);
+            }
+            to{
+                transform: rotate(360deg);
+            }
+        }
+        @keyframes myFly1{
+           0%{
+               transform: translate(20px,590px);
+               width: 200px;
+               height: 200px;
+           }
+            70%{
+                transform: translate(900px,150px);
+                width: 80px;
+                height: 80px;
+            }
+            100%{
+                transform: translate(1200px,50px);
+                width: 0px;
+                height: 0px;
+            }
+        }
+        @keyframes myFly2{
+            0%{
+                transform: translate(1400px,600px);
+                width: 0px;
+                height: 0px;
+            }
+            50%{
+                transform: translate(730px,200px);
+                width: 100px;
+                height: 100px;
+            }
+            100%{
+                transform: translate(30px,600px);
+                width: 200px;
+                height: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <img src="img/caodi.png" alt="草地">
+        <img src="img/fengche.png" alt="风车">
+        <img src="img/fengche.png" alt="风车">
+        <img src="img/fengche.png" alt="风车">
+        <img src="img/1.png" alt="飞机">
+        <img src="img/2.png" alt="飞机">
+        <img src="img/cloud.png" alt="白云">
+        <img src="img/cloud.png" alt="白云">
+    </div>
+</body>
+</html>

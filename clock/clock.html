@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>时钟</title>
+    <style>
+        html{
+            height: 100%;
+        }
+        body{
+            height: 100%;
+            margin:0;
+            background-color: black;
+            /* 弹性布局 */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        main{
+            width: 650px;
+            height: 650px;
+            border-radius:50%;
+            background-color: white;
+            border:10px solid lightskyblue;
+            position: relative;
+        }
+        #num3,#num6, #num9,#num12{
+            font-size: 50px;
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            text-align: center;
+            font-family: "TwofaceICG";
+        }
+        #num3{
+            /*整个main的高度的一半减去数字高度的一半*/
+            top:calc(50% - 60px/2);
+            right: 20px;
+        }
+        #num6{
+            /*整个main的宽度的一半减去数字宽度的一半*/
+            left:calc(50% - 60px/2);
+            bottom: 20px;
+        }
+        #num9{
+            top:calc(50% - 60px/2);
+            left: 20px;
+        }
+        #num12{
+            left:calc(50% - 60px/2);
+            top: 20px;
+        }
+        #second{
+            width: 500px;
+            height: 4px;
+            position: absolute;
+            top:calc(50% - 4px/2);
+            left:calc(50% - 500px/2);
+            animation-name:play;
+            animation-duration:60s;
+            animation-iteration-count: infinite;
+            animation-timing-function:linear;
+        }
+        #second div{
+            height: 100%;
+            width: 300px;
+            background-color: black;
+            border-bottom-left-radius: 50%;
+            border-top-left-radius: 50%;
+        }
+        #minute{
+            width: 440px;
+            height: 6px;
+            position: absolute;
+            top:calc(50% - 6px/2);
+            left:calc(50% - 440px/2);
+            animation:play 3600s infinite linear;
+        }
+        #minute div{
+            height: 100%;
+            width: 270px;
+            background-color: red;
+            border-bottom-left-radius: 50%;
+            border-top-left-radius: 50%;
+        }
+        #hour{
+            width: 380px;
+            height: 8px;
+            position: absolute;
+            top:calc(50% - 8px/2);
+            left:calc(50% - 380px/2);
+            animation:play 43200s infinite linear;
+        }
+        #hour div{
+            height: 100%;
+            width: 240px;
+            background-color: blue;
+            border-bottom-left-radius: 50%;
+            border-top-left-radius: 50%;
+        }
+        #point{
+            width:18px;
+            height:18px;
+            background-color: black;
+            position: absolute;
+            top:calc(50% - 18px/2);
+            left:calc(50% - 18px/2);
+            border-radius: 50%;
+        }
+        @keyframes play {
+            from{
+                transform: rotate(0deg);
+            }
+            to{
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <div id="num3">3</div>
+        <div id="num6">6</div>
+        <div id="num9">9</div>
+        <div id="num12">12</div>
+        <div id="second">
+            <div></div>
+        </div>
+        <div id="minute">
+            <div></div>
+        </div>
+        <div id="hour">
+            <div></div>
+        </div>
+        <div id="point"></div>
+    </main>
+    <script src="clock.js"></script>
+</body>
+</html>
