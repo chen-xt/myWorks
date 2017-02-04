@@ -1,5 +1,4 @@
 
-
 var isDoingAnimation = false; //用来记录当前是否正在做动画
 
 function action(event){
